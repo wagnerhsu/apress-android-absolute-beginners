@@ -20,26 +20,25 @@ import javax.xml.parsers.DocumentBuilderFactory;
 public class MainActivity extends ListActivity {
 
     private TextView mySelection;
-    ArrayList<String> colorItems=new ArrayList<String>();
+    ArrayList<String> colorItems = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mySelection=(TextView)findViewById(R.id.mySelection);
+        mySelection = (TextView) findViewById(R.id.mySelection);
 
         try {
-            InputStream inStream=getResources().openRawResource(R.raw.colors);
-            DocumentBuilder docBuild= DocumentBuilderFactory
+            InputStream inStream = getResources().openRawResource(R.raw.colors);
+            DocumentBuilder docBuild = DocumentBuilderFactory
                     .newInstance().newDocumentBuilder();
-            Document myDoc=docBuild.parse(inStream, null);
-            NodeList colors=myDoc.getElementsByTagName("color");
-            for (int i=0;i<colors.getLength();i++) {
-                colorItems.add(((Element)colors.item(i)).getAttribute("value"));
+            Document myDoc = docBuild.parse(inStream, null);
+            NodeList colors = myDoc.getElementsByTagName("color");
+            for (int i = 0; i < colors.getLength(); i++) {
+                colorItems.add(((Element) colors.item(i)).getAttribute("value"));
             }
             inStream.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
