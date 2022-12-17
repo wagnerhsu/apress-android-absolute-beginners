@@ -1,10 +1,9 @@
 package org.beginningandroid.clientexample;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        switch(view.getId()) {
+        switch (view.getId()) {
             case R.id.startSharing:
                 startSharing(view);
                 break;
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void startSharing(View view) {
-        Intent myIntent=new Intent(this, ServiceExample.class);
+        Intent myIntent = new Intent(this, ServiceExample.class);
         myIntent.putExtra(ServiceExample.EXTRA_ALBUM, "My Holiday Snaps");
         startService(myIntent);
     }
