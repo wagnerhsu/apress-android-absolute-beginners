@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:padding="5dip">
         <RadioButton android:id="@+id/horizontal"
-            android:text="horizontal"/>
+            android:text="horizontal" android:layout_height="wrap_content"
+                 android:layout_width="wrap_content"/>
         <RadioButton android:id="@+id/vertical"
             android:text="vertical"/>
     </RadioGroup>

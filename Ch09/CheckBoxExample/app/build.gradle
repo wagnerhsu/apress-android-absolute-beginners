@@ -2,7 +2,6 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "30.0.0"
 
     defaultConfig {
         applicationId "org.beginningandroid.checkboxexample"
@@ -20,6 +19,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    namespace 'org.beginningandroid.checkboxexample'
 }
 
 dependencies {
